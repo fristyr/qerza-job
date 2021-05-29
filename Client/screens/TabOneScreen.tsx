@@ -1,16 +1,15 @@
 import * as React from 'react';
-import { StyleSheet, Pressable, Text, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 
-import genericStyles from '../styles/genericStyles';
+import EditScreenInfo from '../components/EditScreenInfo';
+import { Text, View } from '../components/Themed';
 
 export default function TabOneScreen() {
   return (
-    <View>
-      <Pressable onPress={()=>{
-        console.log('Bla')
-      }} >
-        <Text>Bla</Text>
-      </Pressable>
+    <View style={styles.container}>
+      <Text style={styles.title}>Tab One</Text>
+      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
+      <EditScreenInfo path="/screens/TabOneScreen.tsx" />
     </View>
   );
 }
@@ -20,7 +19,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    flexDirection:'column',
   },
   title: {
     fontSize: 20,
